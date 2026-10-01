@@ -1,0 +1,25 @@
+{
+  "name": "pinhole-calib",
+  "version": "1.0.0",
+  "description": "离线针孔相机标定与畸变反投影后端 (TypeScript + Node.js + SQLite, 仅 API/CLI)",
+  "type": "module",
+  "bin": {
+    "pinhole": "dist/cli/index.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/server.js",
+    "dev": "node src/server.ts",
+    "test": "tsc -p tsconfig.json && node --test --test-reporter=spec dist/test/calib.test.js dist/test/store.test.js dist/test/api.test.js",
+    "demo": "tsc -p tsconfig.json && node dist/demo.js",
+    "cli": "node dist/cli/index.js"
+  },
+  "engines": {
+    "node": ">=22.5"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "@types/node": "^22.10.0"
+  }
+}
